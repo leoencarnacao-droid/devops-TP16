@@ -10,6 +10,8 @@ jobs:
       - run: pip install -r backend/requirements-dev.txt
       - run: pip install semgrep
       - run: semgrep --config auto .
+      - run: pip install trivy
+      - run: trivy fs .
       - run: flake8 backend
       - run: PYTHONPATH=backend pytest -q backend/tests
       - run: docker compose config -q
