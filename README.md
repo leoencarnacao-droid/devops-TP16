@@ -1,4 +1,4 @@
-# TP15 - Notes App con Semgrep como SAST
+# TP16 - Trivy Container Security y SCA
 
 ## Objetivo
 
@@ -13,6 +13,45 @@ Desplegar una aplicación web contenerizada compuesta por frontend, backend y ba
 - OWASP ZAP
 - GitHub
 * Semgrep (SAST)
+- Trivy (Container Security y SCA)
+
+## Trivy
+
+Se incorporó Trivy como herramienta de Container Security y Software Composition Analysis (SCA).
+
+Análisis realizados:
+
+- trivy image postgres:17-alpine
+- trivy image guia-13c-backend:latest
+- trivy image guia-13c-frontend:latest
+- trivy fs .
+- trivy config .
+
+Reporte generado:
+
+- trivy-backend.json
+
+Integración CI/CD:
+
+- trivy fs . incorporado al workflow .github/workflows/ci.yml
+
+
+Análisis realizados:
+
+    trivy image postgres:17-alpine
+    trivy image guia-13c-backend:latest
+    trivy image guia-13c-frontend:latest
+    trivy fs .
+    trivy config .
+
+Reporte generado:
+
+    trivy-backend.json
+
+Integración CI/CD:
+
+    trivy fs . incorporado al workflow .github/workflows/ci.yml
+
 
 ## Estructura del proyecto
 
